@@ -1,0 +1,361 @@
+@charset "utf-8";
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em { font-style: italic; }
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+   ========================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+/*for all*/
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a { 
+  display: inline-block;
+  text-decoration: none; 
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/*for wrapper*/
+.wrapper {
+  max-width: 1360px;
+  width: 86%; 
+  margin: 0 auto;
+}
+/*=================================
+  Header styling starts here
+=================================*/
+
+header { 
+  padding: 10px 0;
+  background-color: rgba(0,0,0,.6);
+}
+header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartIcon {
+  padding: 5px;
+  border-radius: 5px;
+  background-color:#ff6347;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cartIcon::before {
+  content: "\f218";
+  padding-right: 5px;
+  color: #f1f1f1;
+  font-size: 20px;
+  font-family: "fontawesome";
+}
+
+
+/*=================================
+  Header styling ends here
+=================================*/  
+
+/*=================================
+  main styling starts here
+=================================*/
+
+
+
+.cartItem {
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.cartItem li {
+  width: 25%;
+  height: 25%;
+  padding: 10px 0;
+  margin: 10px;
+  flex-basis: 20%;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0,0,0,.6);
+  transition: .5s ease-in-out;
+}
+
+.item img {
+  width: 200px;
+  height: 250px;
+  box-shadow: 0 0 3px rgba(0,0,0,.8);
+}
+.price-quantity {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.details h3 {
+  margin: 8px 0;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.details h4 {
+  color: #f00;
+  font-weight: 800;
+}
+.details p {
+  color: rgba(0,0,0,.6);
+}
+.btn {
+  margin-top: 8px;
+}
+.minus, .plus {
+  border: 0;
+  outline: 0;
+  font-size: 20px;
+}
+.minus {
+  color: #f00;
+}
+.plus {
+  color: #0f0;
+}
+
+.load-more {
+  padding: 5px 18px 5px 8px;
+  border: 0;
+  outline: 0;
+  margin: 2% 0;
+  position: relative;
+  background-color: rgba(0,0,0,.8);
+  color: #fff;
+  font-family: "fontausome";
+  text-transform: capitalize;
+  letter-spacing: 1.5px;
+  transition: .5s ease-in-out;
+}
+.load-more:hover {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 0 5px rgba(0,0,0,.6);
+}
+.load-more::before {
+  content: "\f0d7";
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  font-family: "fontawesome";
+}
+.hide {
+  display: none;
+}
+
+
+
+
+/* Cart Page CSS Start From Here */
+
+.cartItemData {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cartItemData li {
+  padding: 10px 1%;
+  margin: 0 2% 25px 0;
+  flex-basis: 21.5%;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0,0,0,.6);
+  transition: .5s ease-in-out;
+}
+
+.cartItemData li:nth-child(4n) { margin-right: 0;}
+
+.cartItemData div h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1.2px;  
+  text-transform: uppercase;
+}
+.cartItemData li h4 {
+  color: #4682b4;
+}
+.cartItemData li h4,
+.cartItemData li span,
+.cartItemData li h6 {
+  font-weight: 600;
+}
+.cartItemData li span {
+  color: #f00;
+}
+.cartItemData li h5 {
+  margin: 4% 0;
+  position: relative;
+  font-weight: 700;
+}
+.cartItemData li h5::before {
+  content: "\f005";
+  position: absolute;
+  right: 25%;
+  color:#f4a460;
+  font-family: "fontawesome";
+}
+
+.cartItemData li figure {
+  margin: 20px 0;
+}
+.cartItemData li img {
+  max-width: 200px;
+  max-height: 250px;
+}
+.content {
+  margin:5% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content a {
+  padding: 5px 12px;
+  border-radius: 5px;
+  margin-bottom: 1%;
+  background-color:#d2b48c;
+  color: #fff;
+  text-transform: uppercase;
+  transition: .5s ease-in-out;
+}
+.content a:hover {
+  box-shadow: 0 0 8px #deb887;
+  background-color: #f00;
+}
+.content .clearCart:hover {
+  box-shadow: 0 0 8px #f00;
+  background-color:#deb887;
+}
+.clearCart {
+  padding: 5px 8px;
+  margin-left: 10px;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  background:#f00;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: .5s ease-in-out;
+}
+.labels {
+  color: #ff6347;
+  font-weight: 800;
+}
+
+.hide { display: none; }
+/* Cart Page CSS Start End Here */
+
+
+
+/*=================================
+  main styling ends here
+=================================*/
+
+/*=================================
+  footer styling starts here
+=================================*/ 
+
+
+
+
+
+
+
+ /*=================================
+  footer styling ends here
+=================================*/ 
+
+/*media query starts*/
+/*media query for 995px starts here*/
+@media only screen and (max-width: 995px) {
+
+
+
+}  
